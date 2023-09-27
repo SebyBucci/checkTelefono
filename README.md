@@ -46,6 +46,6 @@ public static class Telefono
         return false;
     }
 }
-```
+```C#
 
 questo codice fornisce un metodo per verificare una serie di numeri di telefono alla ricerca del primo numero di telefono italiano valido. Esso pulisce i numeri da spazi e trattini, quindi verifica se soddisfano le condizioni specifiche per i numeri di telefono italiani. Se trova un numero valido, lo restituisce; altrimenti, restituisce una stringa vuota.
