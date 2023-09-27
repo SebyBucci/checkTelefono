@@ -7,7 +7,8 @@ Ricevuto come parametro un vettore di string, ritornare al chiamante la prima st
 
 Se il numero non viene trovato, ritornare strunga vuota ""
 
-
+Codice:
+```C#
 using System;
 
 public static class Telefono
@@ -42,7 +43,9 @@ public static class Telefono
         {
             return true;
         }
-
         return false;
     }
 }
+```
+
+questo codice fornisce un metodo per verificare una serie di numeri di telefono alla ricerca del primo numero di telefono italiano valido. Esso pulisce i numeri da spazi e trattini, quindi verifica se soddisfano le condizioni specifiche per i numeri di telefono italiani. Se trova un numero valido, lo restituisce; altrimenti, restituisce una stringa vuota.
