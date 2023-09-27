@@ -1,5 +1,4 @@
 using System;
-using System.Text.RegularExpressions;
 
 public static class Telefono
 {
@@ -7,20 +6,33 @@ public static class Telefono
     {
         foreach (string numero in input)
         {
-            string numeroPulito = Regex.Replace(numero, @"[\s-]", "");
-            if (numeroPulito.StartsWith("+39") && numeroPulito.Length == 13)
-            {
-                return numero;
-            }
-            else if (numeroPulito.StartsWith("0039") && numeroPulito.Length == 14)
-            {
-                return numero;
-            }
-            else if (numeroPulito.StartsWith("3") && numeroPulito.Length == 10)
+            string numeroPulito = RimuoviSpaziETrattini(numero);
+            if (EUnNumeroDiTelefonoItaliano(numeroPulito))
             {
                 return numero;
             }
         }
         return "";
+    }
+    private static string RimuoviSpaziETrattini(string numero)
+    {
+        return numero.Replace(" ", "").Replace("-", "");
+    }
+    private static bool EUnNumeroDiTelefonoItaliano(string numero)
+    {
+        if (numero.StartsWith("+39") && numero.Length == 13)
+        {
+            return true;
+        }
+        else if (numero.StartsWith("0039") && numero.Length == 14)
+        {
+            return true;
+        }
+        else if (numero.StartsWith("3") && numero.Length == 10)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
